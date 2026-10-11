@@ -141,6 +141,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .manifesto { text-align: left; }
 .manifesto .display { max-width: 12ch; }
 .manifesto .lede { margin-top: 48px; }
+.manifesto.serie .title { margin-top: 28px; max-width: 16ch; }
+.manifesto.serie .lede { margin-top: 1.5em; max-width: none; }
 .manifesto .sign { margin-top: 56px; font: 400 18px/1 var(--serif); letter-spacing: .14em; }
 
 .series-list li { border-top: 1px solid var(--line); }

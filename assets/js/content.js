@@ -41,7 +41,17 @@ window.OLAM = {
       texto: "Arquitetura de compromisso.",
       porta: { rotulo: "Atelier Voto", href: "voto.html" } },
     { slug: "redea",     nome: "RÉDEA",     materia: "", ideia: "Movimento e universo equestre",
-      texto: "A série nasce de anatomia, movimento, tensão, direção, equipamento e da relação entre cavalo e atleta.",
+      // Manifesto da série: cada bloco é uma estrofe, cada item é uma linha.
+      manifesto: [
+        ["Antes da velocidade, existe contato."],
+        ["Entre a mão e a boca do cavalo,", "entre o corpo e o movimento,", "existe uma tensão quase invisível."],
+        ["O cavalo responde àquilo que não precisa ser dito."],
+        ["Força sem excesso.", "Direção sem rigidez.", "Movimento sustentado por confiança."],
+        ["RÉDEA registra essa relação em ouro."],
+        ["Linhas vêm da anatomia.", "Formas vêm do equipamento.", "Pedras aparecem como pontos de presença."],
+        ["Não como ornamento."],
+        ["Como registro."]
+      ],
       porta: { rotulo: "Rédea / Retrato", href: "retrato.html" } },
     { slug: "aureo",     nome: "ÁUREO",     materia: "Ouro", ideia: "Ouro como matéria",
       texto: "Em ÁUREO, o ouro não sustenta a joia. O ouro constitui a joia." }

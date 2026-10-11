@@ -113,7 +113,12 @@
         '<div class="wrap page-head"><p class="label mute">Série</p>' +
           '<h1 class="display">' + s.nome + "</h1>" +
           '<p class="lede" style="margin-top:32px">' + esc((s.materia ? s.materia + " — " : "") + s.ideia) + ".</p></div>" +
-        (s.texto ? '<section class="wrap section stack"><p class="lede">' + esc(s.texto) + "</p>" +
+        (s.manifesto ? '<section class="wrap section manifesto serie"><h2 class="label mute">Manifesto</h2>' +
+          s.manifesto.map(function (estrofe, i) {
+            return '<p class="' + (i ? "lede" : "title") + '">' + estrofe.map(esc).join("<br>") + "</p>";
+          }).join("") + '<p class="sign">ŌLAM</p>' +
+          (s.porta && !s.texto ? '<p style="margin-top:56px"><a class="cta" href="' + s.porta.href + '">' + esc(s.porta.rotulo) + "</a></p>" : "") + "</section>" : "") +
+        (s.texto ?'<section class="wrap section stack"><p class="lede">' + esc(s.texto) + "</p>" +
           (s.porta ? '<p><a class="cta" href="' + s.porta.href + '">' + esc(s.porta.rotulo) + "</a></p>" : "") + "</section>" : "") +
         '<section class="wrap section stack-l"><h2 class="label">Objetos</h2>' +
           (objs.length ? '<div class="objects">' + objs.map(card).join("") + "</div>"
