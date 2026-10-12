@@ -242,7 +242,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .hd { padding-block: 30px; }
   .hd nav { display: flex; gap: 32px; }
   .hd .toggle { display: none; }
-  .hero { display: grid; grid-template-columns: 7fr 5fr; align-items: center; gap: var(--pad); padding: 84px var(--pad) 40px; max-width: 1440px; margin-inline: auto; }
+  .hero { display: grid; grid-template-columns: 5fr 7fr; align-items: center; gap: var(--pad); padding: 84px var(--pad) 40px; max-width: 1440px; margin-inline: auto; }
   .hero-text { padding: 0; }
   .carousel .ticks { left: 20px; }
   .object-layout { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 var(--pad); }
