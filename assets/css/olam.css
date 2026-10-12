@@ -129,14 +129,19 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* ——— Home ——— */
 
-.hero {
-  min-height: 100svh;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding-bottom: 56px;
-}
-.hero h1 { font-weight: 300; }
-.hero .lede { margin-top: 36px; }
-.hero .label { margin-top: 20px; }
+.hero { min-height: 100svh; display: flex; flex-direction: column; padding-top: 84px; }
+.hero-text { flex: 1; width: 100%; display: flex; flex-direction: column; justify-content: center; padding-block: 56px; }
+.hero h1 { font: 300 clamp(34px, 9.4vw, 64px)/1.08 var(--serif); letter-spacing: -.005em; max-width: 12ch; text-wrap: balance; }
+.hero .label { margin-top: 28px; font-size: clamp(13px, 3.5vw, 16px); }
+
+/* Carrossel do hero: fade discreto. As imagens trazem texto próprio, por isso nunca são cortadas (16:9 fixo). */
+.carousel { position: relative; aspect-ratio: 16 / 9; background: var(--moss-2); overflow: hidden; touch-action: pan-y; }
+.carousel img { position: absolute; inset: 0; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
+.carousel img.on { opacity: 1; }
+.carousel .ticks { position: absolute; left: var(--pad); bottom: 6px; display: flex; gap: 8px; }
+.carousel .ticks button { width: 28px; height: 32px; position: relative; opacity: .45; transition: opacity .3s ease; }
+.carousel .ticks button::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--cream); }
+.carousel .ticks button[aria-current] { opacity: 1; }
 
 .manifesto { text-align: left; }
 .manifesto .display { max-width: 12ch; }
@@ -237,7 +242,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .hd { padding-block: 30px; }
   .hd nav { display: flex; gap: 32px; }
   .hd .toggle { display: none; }
-  .hero { padding-bottom: 72px; }
+  .hero { display: grid; grid-template-columns: 7fr 5fr; align-items: center; gap: var(--pad); padding: 84px var(--pad) 40px; max-width: 1440px; margin-inline: auto; }
+  .hero-text { padding: 0; }
+  .carousel .ticks { left: 20px; }
   .object-layout { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 var(--pad); }
   .object-layout > .object-hero { grid-column: 1 / span 7; position: sticky; top: 0; align-self: start; }
   .object-layout > .object-body { grid-column: 8 / span 5; padding-top: 140px; }

@@ -183,6 +183,49 @@
 
   document.querySelectorAll("[data-render]").forEach(function (el) { R[el.dataset.render](el); });
 
+  /* ——— Carrossel do hero: fade, sem sequestrar a rolagem ——— */
+
+  document.querySelectorAll("[data-carousel]").forEach(function (c) {
+    var imgs = c.querySelectorAll("img"), i = 0, timer;
+    if (imgs.length < 2) return;
+    var ticks = document.createElement("div");
+    ticks.className = "ticks";
+    imgs.forEach(function (_, n) {
+      var b = document.createElement("button");
+      b.setAttribute("aria-label", "Imagem " + (n + 1) + " de " + imgs.length);
+      b.addEventListener("click", function () { go(n); start(); });
+      ticks.appendChild(b);
+    });
+    c.appendChild(ticks);
+    var go = function (n) {
+      i = (n + imgs.length) % imgs.length;
+      imgs.forEach(function (img, k) {
+        if (k === i) img.loading = "eager";
+        img.classList.toggle("on", k === i);
+        img.setAttribute("aria-hidden", String(k !== i));
+        ticks.children[k][k === i ? "setAttribute" : "removeAttribute"]("aria-current", "true");
+      });
+    };
+    var stop = function () { clearInterval(timer); };
+    var start = function () {
+      stop();
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      timer = setInterval(function () { if (!document.hidden) go(i + 1); }, 6000);
+    };
+    c.addEventListener("mouseenter", stop);
+    c.addEventListener("mouseleave", start);
+    c.addEventListener("focusin", stop);
+    c.addEventListener("focusout", start);
+    var x0 = null;
+    c.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    c.addEventListener("touchend", function (e) {
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); start(); }
+    }, { passive: true });
+    go(0);
+    start();
+  });
+
   /* ——— Reveal mínimo ——— */
 
   var els = document.querySelectorAll(".reveal");
