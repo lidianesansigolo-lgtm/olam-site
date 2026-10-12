@@ -135,7 +135,7 @@
       var aquisicao = "";
       if (e.preco && o.preco) aquisicao += '<p class="price">' + esc(o.preco) + "</p>";
       if (e.cta === "adquirir" && o.comercio && o.comercio.url) aquisicao += '<p><a class="cta" href="' + esc(o.comercio.url) + '">Adicionar à seleção</a></p>';
-      else if (e.cta === "acesso") aquisicao += '<p><a class="cta" href="contato.html?assunto=private">Solicitar acesso</a></p>';
+      else if (e.cta === "acesso") aquisicao += '<p><a class="cta" href="contato.html?assunto=private%20shop">Solicitar acesso</a></p>';
       else if (e.cta) aquisicao += '<p><a class="cta" href="contato.html?assunto=' + encodeURIComponent(o.chrono !== "A DEFINIR" ? o.chrono : "objeto") + '">Iniciar uma consulta</a></p>';
 
       el.innerHTML = '<div class="object-layout">' +
