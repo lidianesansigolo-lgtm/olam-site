@@ -134,7 +134,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding-bottom: 56px;
 }
-.hero h1 { font: 300 clamp(84px, 27vw, 300px)/.86 var(--serif); letter-spacing: .02em; margin-left: -.04em; }
+.hero h1 { font-weight: 300; }
 .hero .lede { margin-top: 36px; }
 .hero .label { margin-top: 20px; }
 
