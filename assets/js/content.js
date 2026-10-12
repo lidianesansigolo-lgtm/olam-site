@@ -30,18 +30,90 @@ window.OLAM = {
   },
 
   series: [
-    { slug: "estrutura", nome: "ESTRUTURA", materia: "Diamantes", ideia: "Arquitetura" },
-    { slug: "abissal",   nome: "ABISSAL",   materia: "Tanzanita", ideia: "Profundidade" },
-    { slug: "horizonte", nome: "HORIZONTE", materia: "Água-marinha", ideia: "Extensão" },
-    { slug: "ion",       nome: "ÍON",       materia: "Turmalina do tipo Paraíba", ideia: "Energia" },
-    { slug: "desvio",    nome: "DESVIO",    materia: "Diamantes fancy yellow", ideia: "Exceção" },
-    { slug: "veio",      nome: "VEIO",      materia: "Esmeraldas", ideia: "Geologia" },
-    { slug: "pacto",     nome: "PACTO",     materia: "", ideia: "Símbolo e devoção" },
+    // Manifesto da série: cada bloco é uma estrofe, cada item é uma linha.
+    { slug: "estrutura", nome: "ESTRUTURA", materia: "Diamantes", ideia: "Arquitetura",
+      manifesto: [
+        ["Uma pedra não existe sozinha."],
+        ["Existe aquilo que a contém."],
+        ["Aquilo que a suspende."],
+        ["Aquilo que permite que a luz atravesse."],
+        ["ESTRUTURA investiga o limite entre matéria e vazio."],
+        ["O ouro sustenta."],
+        ["O diamante responde à luz."],
+        ["Entre ambos permanece apenas o necessário."]
+      ] },
+    { slug: "abissal",   nome: "ABISSAL",   materia: "Tanzanita", ideia: "Profundidade",
+      manifesto: [
+        ["Algumas cores existem na superfície."],
+        ["Outras parecem continuar depois dela."],
+        ["ABISSAL nasce onde a luz encontra profundidade."],
+        ["Azul."],
+        ["Violeta."],
+        ["Sombra."],
+        ["Uma mesma matéria muda conforme o olhar se desloca."],
+        ["Não existe horizonte."],
+        ["Apenas profundidade."]
+      ] },
+    { slug: "horizonte", nome: "HORIZONTE", materia: "Água-marinha", ideia: "Extensão",
+      manifesto: [
+        ["Uma linha separa."],
+        ["E ao mesmo tempo aproxima."],
+        ["Matéria e ar."],
+        ["Presença e distância."],
+        ["Aquilo que termina."],
+        ["Aquilo que continua."],
+        ["HORIZONTE nasce dessa divisão quase invisível."]
+      ] },
+    { slug: "ion",       nome: "ÍON",       materia: "Turmalina do tipo Paraíba", ideia: "Energia",
+      manifesto: [
+        ["Algumas matérias absorvem luz."],
+        ["Outras parecem devolvê-la."],
+        ["ÍON nasce dessa diferença."],
+        ["Cor concentrada."],
+        ["Energia contida."],
+        ["Um ponto de intensidade dentro da matéria."]
+      ] },
+    { slug: "desvio",    nome: "DESVIO",    materia: "Diamantes fancy yellow", ideia: "Exceção",
+      manifesto: [
+        ["Existe uma ordem esperada."],
+        ["E existe aquilo que se afasta dela."],
+        ["Uma alteração mínima pode mudar toda a percepção da matéria."],
+        ["DESVIO começa nesse ponto."],
+        ["Não celebra a irregularidade."],
+        ["Observa aquilo que ela produz."]
+      ] },
+    { slug: "veio",      nome: "VEIO",      materia: "Esmeraldas", ideia: "Geologia",
+      manifesto: [
+        ["A esmeralda não nasce clara."],
+        ["Ela se forma sob pressão mineral."],
+        ["Durante milhões de anos, o verde atravessa a rocha até tornar-se matéria estável."],
+        ["Cada esmeralda carrega fraturas internas como registros do tempo que a formou."],
+        ["VEIO não busca perfeição."],
+        ["Busca profundidade."]
+      ] },
+    { slug: "pacto",     nome: "PACTO",     materia: "", ideia: "Símbolo e devoção",
+      manifesto: [
+        ["Alguns objetos são usados."],
+        ["Outros são guardados."],
+        ["Alguns acompanham uma vida inteira."],
+        ["PACTO nasce quando matéria e crença passam a ocupar o mesmo objeto."],
+        ["O ouro permanece."],
+        ["O símbolo atravessa gerações."],
+        ["A fé pertence a quem o carrega."]
+      ] },
     { slug: "voto",      nome: "VOTO",      materia: "", ideia: "Compromisso",
+      manifesto: [
+        ["Antes do objeto, existe uma decisão."],
+        ["Antes da forma, existe aquilo que ela deverá sustentar."],
+        ["VOTO começa nesse instante."],
+        ["Uma pedra."],
+        ["Duas pessoas."],
+        ["Uma escolha que pretende atravessar o tempo."],
+        ["O objeto registra."]
+      ],
       texto: "Arquitetura de compromisso.",
       porta: { rotulo: "Atelier Voto", href: "voto.html" } },
     { slug: "redea",     nome: "RÉDEA",     materia: "", ideia: "Movimento e universo equestre",
-      // Manifesto da série: cada bloco é uma estrofe, cada item é uma linha.
       manifesto: [
         ["Antes da velocidade, existe contato."],
         ["Entre a mão e a boca do cavalo,", "entre o corpo e o movimento,", "existe uma tensão quase invisível."],
