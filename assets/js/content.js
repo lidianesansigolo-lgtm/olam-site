@@ -126,6 +126,19 @@ window.OLAM = {
       ],
       porta: { rotulo: "Rédea / Retrato", href: "retrato.html" } },
     { slug: "aureo",     nome: "ÁUREO",     materia: "Ouro", ideia: "Ouro como matéria",
+      manifesto: [
+        ["Ouro é tempo solidificado."],
+        ["Antes da pedra, existe matéria."],
+        ["Extraída."],
+        ["Fundida."],
+        ["Transformada."],
+        ["O ouro atravessa formas sem perder aquilo que é."],
+        ["Pode ser superfície."],
+        ["Pode ser volume."],
+        ["Pode carregar marcas."],
+        ["Pode permanecer quase intacto."],
+        ["ÁUREO começa quando nada precisa ser acrescentado."]
+      ],
       texto: "Em ÁUREO, o ouro não sustenta a joia. O ouro constitui a joia." }
   ],
 
