@@ -14,7 +14,7 @@
 
   var NAV = [
     ["OBJETOS", "objetos.html"], ["SÉRIES", "series.html"], ["ATLAS", "atlas.html"], ["ARQUIVO", "arquivo.html"],
-    ["VOTO", "voto.html"], ["PRIVATE", "private.html"], ["CONTATO", "contato.html"]
+    ["VOTO", "voto.html"], ["PRIVATE SHOP", "private.html"], ["CONTATO", "contato.html"]
   ];
   var here = location.pathname.split("/").pop() || "index.html";
   var links = function (cls) {
