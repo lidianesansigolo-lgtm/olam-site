@@ -142,15 +142,15 @@
         '<figure class="object-hero wrap">' + figure(o, "", true) + "</figure>" +
         '<div class="object-body wrap">' +
           '<section class="section bare stack"><p class="label mute">Objeto</p>' +
-            '<h1 class="title">' + esc(o.nome) + "</h1>" +
+            '<h1 class="title">' + esc(o.rascunho ? "Registro em preparação" : o.nome) + "</h1>" +
             '<p class="label"><a href="serie.html?s=' + s.slug + '">Série ' + s.nome + "</a></p>" +
             '<p class="code mute">Chrono Mark — ' + esc(o.chrono) + "</p>" +
-            (o.rascunho ? '<p class="note">Registro em preparação. Imagem de referência de direção visual. Matéria, forma e registro serão publicados quando documentados.</p>' : "") +
+            (o.rascunho ? '<p class="note">Imagem de referência de direção visual. Matéria, forma e registro serão publicados quando documentados.</p>' : "") +
           "</section>" +
           spec("Matéria", o.materia) + spec("Forma", o.forma) + spec("Pedra", o.pedra) + spec("Registro", o.registro) +
           (o.corpo && o.corpo.length ? '<section class="section stack"><h2 class="label">Corpo</h2>' +
             o.corpo.map(function (c) { return '<img src="' + c.src + '" alt="' + esc(c.alt || "") + '" loading="lazy">'; }).join("") + "</section>" : "") +
-          '<section class="section stack"><h2 class="label">Disponibilidade</h2><p class="state">' + esc(o.estado) + "</p></section>" +
+          '<section class="section stack"><h2 class="label">Disponibilidade</h2><p class="' + (o.estado === "A DEFINIR" ? "body" : "state") + '">' + esc(o.estado) + "</p></section>" +
           (aquisicao ? '<section class="section stack"><h2 class="label">' + (e.cta === "adquirir" ? "Aquisição" : "Consulta") + "</h2>" + aquisicao + "</section>" : "") +
           '<section class="section stack"><h2 class="label">Continuidade</h2>' +
             '<p class="body">Assistência, registro e cuidados acompanham o objeto.</p>' +
