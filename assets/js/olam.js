@@ -25,7 +25,7 @@
 
   document.body.insertAdjacentHTML("afterbegin",
     '<header class="hd">' +
-      '<a class="mark" href="index.html" aria-label="ŌLAM — início">ŌLAM</a>' +
+      '<a class="mark" href="index.html" aria-label="ŌLAM, início">ŌLAM</a>' +
       '<nav aria-label="Principal">' + links("label").join("") + "</nav>" +
       '<button class="toggle label" aria-expanded="false" aria-controls="menu">Menu</button>' +
     "</header>" +
@@ -87,7 +87,7 @@
   var seriesList = function () {
     return '<ol class="series-list">' + O.series.map(function (s) {
       return '<li><a href="serie.html?s=' + s.slug + '"><span class="n">' + s.nome + "</span>" +
-        '<span class="label mute">' + esc((s.materia ? s.materia + " — " : "") + s.ideia) + "</span></a></li>";
+        '<span class="label mute">' + esc((s.materia ? s.materia + " / " : "") + s.ideia) + "</span></a></li>";
     }).join("") + "</ol>";
   };
 
@@ -112,7 +112,7 @@
       el.innerHTML =
         '<div class="wrap page-head"><p class="label mute">Série</p>' +
           '<h1 class="display">' + s.nome + "</h1>" +
-          '<p class="lede" style="margin-top:32px">' + esc((s.materia ? s.materia + " — " : "") + s.ideia) + ".</p></div>" +
+          '<p class="lede" style="margin-top:32px">' + esc((s.materia ? s.materia + ". " : "") + s.ideia) + ".</p></div>" +
         (s.manifesto ? '<section class="wrap section manifesto serie"><h2 class="label mute">Manifesto</h2>' +
           s.manifesto.map(function (estrofe, i) {
             return '<p class="' + (i ? "lede" : "title") + '">' + estrofe.map(esc).join("<br>") + "</p>";
@@ -144,7 +144,7 @@
           '<section class="section bare stack"><p class="label mute">Objeto</p>' +
             '<h1 class="title">' + esc(o.rascunho ? "Registro em preparação" : o.nome) + "</h1>" +
             '<p class="label"><a href="serie.html?s=' + s.slug + '">Série ' + s.nome + "</a></p>" +
-            '<p class="code mute">Chrono Mark — ' + esc(o.chrono) + "</p>" +
+            '<p class="code mute">Chrono Mark: ' + esc(o.chrono) + "</p>" +
             (o.rascunho ? '<p class="note">Imagem de referência de direção visual. Matéria, forma e registro serão publicados quando documentados.</p>' : "") +
           "</section>" +
           spec("Matéria", o.materia) + spec("Forma", o.forma) + spec("Pedra", o.pedra) + spec("Registro", o.registro) +
@@ -171,7 +171,7 @@
         return '<div><dt class="label">' + k + "</dt><dd>" + (v ? '<a href="' + href + '">' + esc(v) + "</a>" : "A DEFINIR") + "</dd></div>";
       };
       el.innerHTML =
-        (assunto ? '<p class="code mute">Assunto — ' + esc(assunto.toUpperCase()) + "</p>" : "") +
+        (assunto ? '<p class="code mute">Assunto: ' + esc(assunto.toUpperCase()) + "</p>" : "") +
         (c.whatsapp ? '<p><a class="cta" rel="noopener" href="https://wa.me/' + esc(c.whatsapp) + '">Falar com a ŌLAM</a></p>' : "") +
         '<dl class="spec">' +
           linha("Atendimento", c.whatsapp && "WhatsApp", "https://wa.me/" + c.whatsapp) +
